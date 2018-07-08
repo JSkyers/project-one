@@ -1,3 +1,9 @@
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+progress::-webkit-progress-bar { background: red; }
+progress::-webkit-progress-value { background: green; }
+
 #container {
 	width: 1300px;
 	height: 600px;
@@ -7,6 +13,18 @@
 	border: 5px solid black;
 }
 
+progress {
+  color: green;
+  font-size: .6em;
+  line-height: 1.5em;
+  text-indent: .5em;
+  width: 15em;
+  height: 1.8em;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: red;
+}
+
 .backgroundresize {
   width: 1290px;
   height: 590px;
@@ -14,7 +32,8 @@
 }
 
 body {
-  background-image: url("images/main-background.png");
+  background-image: url("../images/home-bg.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -22,6 +41,97 @@ body {
   position: absolute;
   z-index: 1;
   height: 400px;
+}
+
+.projectiles {
+  position: absolute;
+  z-index: 1;
+}
+
+.blackhole {
+  position: absolute;
+  z-index: 1;
+  position: absolute;
+  top: 280px;
+  left:575px;
+  width: 240px;
+  height: 240px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+  display: none;
+}
+
+.player1light {
+  top: 175px;
+  left:200px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(20deg);
+  display: none;
+}
+
+.player1heavy {
+  top: 175px;
+  left:200px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(20deg);
+  display: none;
+}
+
+.player2light {
+  top: 195px;
+  right:220px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(340deg);
+  display: none;
+}
+
+.player2heavy {
+  top: 175px;
+  right:200px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(340deg);
+  display: none;
+}
+
+.player3light {
+  bottom: 185px;
+  left:220px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(350deg);
+  display: none;
+}
+
+.player3heavy {
+  bottom: 185px;
+  left:220px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(350deg);
+  display: none;
+}
+
+.player4light {
+  bottom: 165px;
+  right:220px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(10deg);
+  display: none;
+}
+
+.player4heavy {
+  bottom: 165px;
+  right:225px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(10deg);
+  display: none;
 }
 
 .interface {
@@ -64,7 +174,7 @@ body {
 
 .player2 {
   top: 0px;
-  right: 0px;
+  right: 30px;
 }
 
 .player3 {
@@ -75,9 +185,34 @@ body {
 
 .player4 {
   bottom: 0px;
-  right: 0px;
+  right: 40px;
 }
 
 audio {
   display: none;
+}
+
+#player1health {
+  top: 100px;
+  left: 140px;
+}
+
+#player2health {
+  top: 100px;
+  right: 160px;
+}
+
+#player3health {
+  bottom: 300px;
+  left: 160px;
+}
+
+#player4health {
+  bottom: 300px;
+  right: 160px;
+}
+
+.healthbars {
+  position: absolute;
+  color: red;
 }
