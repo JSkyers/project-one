@@ -216,3 +216,49 @@ audio {
   position: absolute;
   color: red;
 }
+
+.title {
+  position: absolute;
+  top: 150px;
+  left: 525px;
+}
+
+.start {
+  position: absolute;
+  top: 400px;
+  left: 675px;
+  height: 40px;
+  width: 150px;
+}
+
+.instructions {
+  position: absolute;
+  top: 475px;
+  left: 675px;
+  height: 40px;
+  width: 150px;
+}
+
+.return {
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  height: 40px;
+  width: 150px;
+}
+
+.howtoplaylogo {
+  position: absolute;
+  top: 100px;
+  left: 625px;
+  height: 70px;
+  width: 250px;
+}
+
+.victorylogo {
+  position: absolute;
+  top: 175px;
+  left: 875px;
+  height: 400px;
+  width: 400px;
+}
