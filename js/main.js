@@ -1,8 +1,33 @@
-// let player1health = document.getElementById("player1health")
-// player1health.value -= 10;
-// let player2health = document.getElementById("player2health")
-// player2health.value -= 20;
-// let player3health = document.getElementById("player3health")
-// player3health.value -= 30;
-// let player4health = document.getElementById("player4health")
-// player4health.value -= 40;
+$(function() {
+
+var player1lightchance = 80;
+var player1heavychance = 50;
+var player2lightchance = 80;
+var player2heavychance = 50;
+var player3lightchance = 80;
+var player3heavychance = 50;
+var player4lightchance = 80;
+var player4heavychance = 50;
+var playerturn = 1;
+
+
+
+$(".players").click(function () {
+        if($(this).attr("id") != playerturn) {
+          parseInt($("#player1health").attr("value"))
+          $("#player"+$(this).attr("id")+"health")[0].value -= 10;
+          if (playerturn == 4) {
+            playerturn = 1
+          } else playerturn += 1;
+        }
+        currentTurn();
+    });
+
+function currentTurn() {
+  $(".characterturntext").attr("src","images/player-"+playerturn+"-logo.png");
+}
+
+
+
+
+});
