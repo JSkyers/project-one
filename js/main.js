@@ -7,6 +7,7 @@ var heavyProjectileAudio = new Audio('audio/projectile-light.wav');
 var winnerAudio = new Audio('audio/winner.wav');
 var playersturns = [1,2,3,4];
 var playerturn = 0;
+var attacksToRun =[];
 
 
 
@@ -31,10 +32,19 @@ function changeTurnOrRound() {
     currentround += 1;
 }
 
+function executeAttacks() {
+    for (var i = 0; i < attacksToRun.length; i++) {
+      eval(attacksToRun[i] + "()");
+    }
+    attacksToRun = [];
+}
+
 function targetSelect(target) {
   parseInt($("#player1health").attr("value"))
-  eval("player" + playersturns[playerturn] + "vsplayer" + $(target).attr("id") + "heavy")();
-  $("#player"+$(target).attr("id")+"health")[0].value -= 20;
+  attacksToRun.push("player" + playersturns[playerturn] + "vsplayer" + $(target).attr("id") + "heavy");
+  if (attacksToRun.length == playersturns.length) {
+    executeAttacks();
+  }
 }
 
 function playerDeath(player) {
@@ -93,6 +103,7 @@ function player1vsplayer2heavy() {
     $("#1").attr("src","images/player-1-stand.gif");
   });
   $(".player1heavy").css("-webkit-transform", "rotate(359deg)");
+  $("#player2health")[0].value -= 20;
 }
 
 function player1vsplayer3heavy() {
@@ -104,6 +115,7 @@ function player1vsplayer3heavy() {
     $("#1").attr("src","images/player-1-stand.gif");
   });
   $(".player1heavy").css("-webkit-transform", "rotate(90deg)");
+  $("#player3health")[0].value -= 20;
 }
 
 function player1vsplayer4heavy() {
@@ -115,6 +127,7 @@ function player1vsplayer4heavy() {
     $("#1").attr("src","images/player-1-stand.gif");
   });
   $(".player1heavy").css("-webkit-transform", "rotate(30deg)");
+  $("#player4health")[0].value -= 20;
 }
 
 function player2vsplayer1heavy() {
@@ -126,6 +139,7 @@ function player2vsplayer1heavy() {
     $("#2").attr("src","images/player-2-stand.gif");
   });
   $(".player2heavy").css("-webkit-transform", "rotate(359deg)");
+  $("#player1health")[0].value -= 20;
 }
 
 function player2vsplayer3heavy() {
@@ -137,6 +151,7 @@ function player2vsplayer3heavy() {
     $("#2").attr("src","images/player-2-stand.gif");
   });
   $(".player2heavy").css("-webkit-transform", "rotate(330deg)");
+  $("#player3health")[0].value -= 20;
 }
 
 function player2vsplayer4heavy() {
@@ -148,6 +163,7 @@ function player2vsplayer4heavy() {
     $("#2").attr("src","images/player-2-stand.gif");
   });
   $(".player2heavy").css("-webkit-transform", "rotate(270deg)");
+  $("#player4health")[0].value -= 20;
 }
 
 function player3vsplayer1heavy() {
@@ -159,6 +175,7 @@ function player3vsplayer1heavy() {
     $("#3").attr("src","images/player-3-stand.gif");
   });
   $(".player3heavy").css("-webkit-transform", "rotate(270deg)");
+  $("#player1health")[0].value -= 20;
 }
 
 function player3vsplayer2heavy() {
@@ -170,6 +187,7 @@ function player3vsplayer2heavy() {
     $("#3").attr("src","images/player-3-stand.gif");
   });
   $(".player3heavy").css("-webkit-transform", "rotate(330deg)");
+  $("#player2health")[0].value -= 20;
 }
 
 function player3vsplayer4heavy() {
@@ -181,6 +199,7 @@ function player3vsplayer4heavy() {
     $("#3").attr("src","images/player-3-stand.gif");
   });
   $(".player3heavy").css("-webkit-transform", "rotate(5deg)");
+  $("#player4health")[0].value -= 20;
 }
 
 function player4vsplayer1heavy() {
@@ -192,6 +211,7 @@ function player4vsplayer1heavy() {
     $("#4").attr("src","images/player-4-stand.gif");
   });
   $(".player4heavy").css("-webkit-transform", "rotate(20deg)");
+  $("#player1health")[0].value -= 20;
 }
 
 function player4vsplayer2heavy() {
@@ -203,6 +223,7 @@ function player4vsplayer2heavy() {
     $("#4").attr("src","images/player-4-stand.gif");
   });
   $(".player4heavy").css("-webkit-transform", "rotate(90deg)");
+  $("#player2health")[0].value -= 20;
 }
 
 function player4vsplayer3heavy() {
@@ -214,6 +235,7 @@ function player4vsplayer3heavy() {
     $("#4").attr("src","images/player-4-stand.gif");
   });
   $(".player4heavy").css("-webkit-transform", "rotate(0deg)");
+  $("#player3health")[0].value -= 20;
 }
 
 
