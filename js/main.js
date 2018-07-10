@@ -1,30 +1,24 @@
 $(function() {
 
-var playerturn = 1;
+
 var currentround = 1;
 var playersalive = 4;
 var heavyProjectileAudio = new Audio('audio/projectile-light.wav');
+var winnerAudio = new Audio('audio/winner.wav');
+var playersturns = [1,2,3,4];
+var playerturn = 0;
 
 
 
 $(".players").click(function () {
-        if($(this).attr("id") != playerturn) {
-          parseInt($("#player1health").attr("value"))
-          $("#player"+$(this).attr("id")+"health")[0].value -= 20;
-          eval("player" + playerturn + "vsplayer" + $(this).attr("id") + "heavy")();
+        if($(this).attr("id") != playersturns[playerturn]) {
+          targetSelect(this);
           if ($("#player"+$(this).attr("id")+"health")[0].value == 0) {
-              $(".player"+$(this).attr("id")).fadeOut();
-              $(".player"+$(this).attr("id")).remove();
-              $("#player"+$(this).attr("id")+"health")[0].remove();
-              playersalive -= 1;
-              if (playersalive == 1) {
-                  winnerOfGame();
-              }
+              playerDeath(this);
           }
-          if (playerturn == playersalive && playersalive != 1) {
-            playerturn = 1;
-            currentround += 1;
-          } else{
+          if (playerturn >= playersturns.length - 1) {
+              changeTurnOrRound();
+          } else {
             playerturn += 1;
           }
         }
@@ -32,12 +26,42 @@ $(".players").click(function () {
         currentRound();
     });
 
+function changeTurnOrRound() {
+    playerturn = 0;
+    currentround += 1;
+}
+
+function targetSelect(target) {
+  parseInt($("#player1health").attr("value"))
+  eval("player" + (playerturn + 1) + "vsplayer" + $(target).attr("id") + "heavy")();
+  $("#player"+$(target).attr("id")+"health")[0].value -= 20;
+}
+
+function playerDeath(player) {
+  var newOrder = [];
+  $(player).fadeOut();
+  $(player).remove();
+  $("#player"+$(player).attr("id")+"health")[0].remove();
+  for (var i = 0; i < playersturns.length; i++) {
+    if (playersturns[i] != $(player).attr("id")) {
+      newOrder.push(playersturns[i]);
+    }
+  }
+  playersturns = newOrder;
+  console.log(playersturns);
+  playersalive -= 1;
+  if (playersalive == 1) {
+      winnerOfGame();
+  }
+}
+
 
 function winnerOfGame() {
 
+  winnerAudio.play();
   $(".winnername").attr("src","images/player-"+$($(".players")[0]).attr("id")+"-victory.png");
-  $(".winnername").show();
-  $(".winnerlogo").show();
+  $(".winnername").fadeIn();
+  $(".winnerlogo").fadeIn();
   $(".mainreturn").show();
   $(".characterturntext").hide();
   $(".currentroundtext").hide();
@@ -53,16 +77,16 @@ function winnerOfGame() {
 
 
 function currentTurn() {
-  $(".characterturntext").attr("src","images/player-"+playerturn+"-logo.png");
+  $(".characterturntext").attr("src","images/player-"+playersturns[playerturn]+"-logo.png");
 }
 
 function currentRound() {
-  $(".currentroundtext").attr("src","images/round-"+currentround+".png");
+  $(".currentroundtext").attr("src","images/round-"+(currentround)+".png");
 }
 
 
 function player1vsplayer2heavy() {
-  $("#1").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#1").attr("src","images/player-1-attack.gif");
   $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
   $(".player1heavy").animate({left: '+=970'}, 800, function() {
@@ -73,7 +97,7 @@ function player1vsplayer2heavy() {
 }
 
 function player1vsplayer3heavy() {
-  $("#1").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#1").attr("src","images/player-1-attack.gif");
   $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
   $(".player1heavy").animate({top: '+=300'}, 800, function() {
@@ -84,7 +108,7 @@ function player1vsplayer3heavy() {
 }
 
 function player1vsplayer4heavy() {
-  $("#1").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#1").attr("src","images/player-1-attack.gif");
   $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
   $(".player1heavy").animate({left: '+=970', top: '+=300'}, 800, function() {
@@ -95,7 +119,7 @@ function player1vsplayer4heavy() {
 }
 
 function player2vsplayer1heavy() {
-  $("#2").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#2").attr("src","images/player-2-attack.gif");
   $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
   $(".player2heavy").animate({left: '-=970'}, 800, function() {
@@ -106,7 +130,7 @@ function player2vsplayer1heavy() {
 }
 
 function player2vsplayer3heavy() {
-  $("#2").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#2").attr("src","images/player-2-attack.gif");
   $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
   $(".player2heavy").animate({left: '-=970', top: '+=300'}, 800, function() {
@@ -117,7 +141,7 @@ function player2vsplayer3heavy() {
 }
 
 function player2vsplayer4heavy() {
-  $("#2").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#2").attr("src","images/player-2-attack.gif");
   $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
   $(".player2heavy").animate({top: '+=300'}, 800, function() {
@@ -128,7 +152,7 @@ function player2vsplayer4heavy() {
 }
 
 function player3vsplayer1heavy() {
-  $("#3").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#3").attr("src","images/player-3-attack.gif");
   $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
   $(".player3heavy").animate({top: '-=300'}, 800, function() {
@@ -139,7 +163,7 @@ function player3vsplayer1heavy() {
 }
 
 function player3vsplayer2heavy() {
-  $("#3").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#3").attr("src","images/player-3-attack.gif");
   $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
   $(".player3heavy").animate({top: '-=300', left: '+=970'}, 800, function() {
@@ -150,7 +174,7 @@ function player3vsplayer2heavy() {
 }
 
 function player3vsplayer4heavy() {
-  $("#3").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#3").attr("src","images/player-3-attack.gif");
   $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
   $(".player3heavy").animate({left: '+=970'}, 800, function() {
@@ -161,7 +185,7 @@ function player3vsplayer4heavy() {
 }
 
 function player4vsplayer1heavy() {
-  $("#4").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#4").attr("src","images/player-4-attack.gif");
   $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
   $(".player4heavy").animate({left: '-=970', top: '-=300'}, 800, function() {
@@ -172,7 +196,7 @@ function player4vsplayer1heavy() {
 }
 
 function player4vsplayer2heavy() {
-  $("#4").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#4").attr("src","images/player-4-attack.gif");
   $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
   $(".player4heavy").animate({top: '-=300'}, 800, function() {
@@ -183,7 +207,7 @@ function player4vsplayer2heavy() {
 }
 
 function player4vsplayer3heavy() {
-  $("#4").attr("src","images/player-"+playerturn+"-attack.gif");
+  $("#4").attr("src","images/player-4-attack.gif");
   $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
   $(".player4heavy").animate({left: '-=970'}, 800, function() {
@@ -192,8 +216,6 @@ function player4vsplayer3heavy() {
   });
   $(".player4heavy").css("-webkit-transform", "rotate(0deg)");
 }
-
-
 
 
 

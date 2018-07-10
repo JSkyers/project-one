@@ -289,3 +289,12 @@ audio {
   width: 450px;
   display: none;
 }
+
+  a:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.players:hover {
+  cursor: pointer;
+}
