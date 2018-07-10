@@ -355,7 +355,7 @@ audio {
   left: 900px;
 }
 
-.player1title {
+.player1Title {
   position: absolute;
   top: 360px;
   left: 220px;
@@ -363,7 +363,7 @@ audio {
   width: 100px;
 }
 
-.player2title {
+.player2Title {
   position: absolute;
   top: 360px;
   left: 510px;
@@ -371,7 +371,7 @@ audio {
   width: 100px;
 }
 
-.player3title {
+.player3Title {
   position: absolute;
   top: 360px;
   left: 850px;
@@ -379,7 +379,7 @@ audio {
   width: 100px;
 }
 
-.player4title {
+.player4Title {
   position: absolute;
   top: 360px;
   left: 1130px;

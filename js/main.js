@@ -14,6 +14,9 @@ var attacksToRun =[];
 $(".players").click(function () {
         if($(this).attr("id") != playersTurns[playerTurn]) {
           targetSelect(this);
+          if (parseInt($("#player"+$(this).attr("id")+"health").attr("value") <= 0)) {
+              playerDeath(this);
+          }
           if (playerTurn >= playersTurns.length - 1) {
               changeTurnOrRound();
           } else {
@@ -40,9 +43,6 @@ function executeAttacks() {
 
 function targetSelect(target) {
   parseInt($("#player1health").attr("value"))
-  if (parseInt($("#player"+$(this).attr("id")+"health").attr("value") <= 0)) {
-      playerDeath(this);
-  }
   attacksToRun.push("player" + playersTurns[playerTurn] + "vsplayer" + $(target).attr("id") + "heavy");
   if (attacksToRun.length == playersTurns.length) {
     executeAttacks();
@@ -61,7 +61,6 @@ function playerDeath(player) {
   }
   playersTurns = newOrder;
   playersAlive -= 1;
-  console.log(playersAlive);
   if (playersAlive == 1) {
       winnerOfGame();
   }
