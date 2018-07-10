@@ -298,3 +298,127 @@ audio {
 .players:hover {
   cursor: pointer;
 }
+
+.firstlinei {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  height: 20px;
+  width: 450px;
+}
+
+.secondlinei {
+  position: absolute;
+  top: 220px;
+  left: 440px;
+  height: 20px;
+  width: 600px;
+}
+
+.thirdlinei {
+  position: absolute;
+  top: 240px;
+  left: 490px;
+  height: 20px;
+  width: 475px;
+}
+
+.fourthlinei {
+  position: absolute;
+  top: 260px;
+  left: 520px;
+  height: 20px;
+  width: 400px;
+}
+
+.player1img {
+  position: absolute;
+  top: 300px;
+  left: 0px;
+}
+
+.player2img {
+  position: absolute;
+  top: 290px;
+  left: 300px;
+}
+
+.player3img {
+  position: absolute;
+  top: 290px;
+  left: 600px;
+}
+
+.player4img {
+  position: absolute;
+  top: 290px;
+  left: 900px;
+}
+
+.player1title {
+  position: absolute;
+  top: 360px;
+  left: 220px;
+  height: 20px;
+  width: 100px;
+}
+
+.player2title {
+  position: absolute;
+  top: 360px;
+  left: 510px;
+  height: 20px;
+  width: 100px;
+}
+
+.player3title {
+  position: absolute;
+  top: 360px;
+  left: 850px;
+  height: 20px;
+  width: 100px;
+}
+
+.player4title {
+  position: absolute;
+  top: 360px;
+  left: 1130px;
+  height: 20px;
+  width: 100px;
+}
+
+.player1arrow {
+  position: absolute;
+  top: 390px;
+  left: 260px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.player2arrow {
+  position: absolute;
+  top: 390px;
+  left: 550px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.player3arrow {
+  position: absolute;
+  top: 390px;
+  left: 890px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.player4arrow {
+  position: absolute;
+  top: 390px;
+  left: 1170px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}

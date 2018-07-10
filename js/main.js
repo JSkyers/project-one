@@ -33,7 +33,7 @@ function changeTurnOrRound() {
 
 function targetSelect(target) {
   parseInt($("#player1health").attr("value"))
-  eval("player" + (playerturn + 1) + "vsplayer" + $(target).attr("id") + "heavy")();
+  eval("player" + playersturns[playerturn] + "vsplayer" + $(target).attr("id") + "heavy")();
   $("#player"+$(target).attr("id")+"health")[0].value -= 20;
 }
 
@@ -48,7 +48,6 @@ function playerDeath(player) {
     }
   }
   playersturns = newOrder;
-  console.log(playersturns);
   playersalive -= 1;
   if (playersalive == 1) {
       winnerOfGame();
