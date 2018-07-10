@@ -14,10 +14,14 @@ $(".players").click(function () {
           eval("player" + playerturn + "vsplayer" + $(this).attr("id") + "heavy")();
           if ($("#player"+$(this).attr("id")+"health")[0].value == 0) {
               $(".player"+$(this).attr("id")).fadeOut();
+              $(".player"+$(this).attr("id")).remove();
               $("#player"+$(this).attr("id")+"health")[0].remove();
-              playersalive = playersalive -= 1;
-            }
-          if (playerturn == playersalive) {
+              playersalive -= 1;
+              if (playersalive == 1) {
+                  winnerOfGame();
+              }
+          }
+          if (playerturn == playersalive && playersalive != 1) {
             playerturn = 1;
             currentround += 1;
           } else{
@@ -29,6 +33,23 @@ $(".players").click(function () {
     });
 
 
+function winnerOfGame() {
+
+  $(".winnername").attr("src","images/player-"+$($(".players")[0]).attr("id")+"-victory.png");
+  $(".winnername").show();
+  $(".winnerlogo").show();
+  $(".mainreturn").show();
+  $(".characterturntext").hide();
+  $(".currentroundtext").hide();
+  $(".phasetext").hide();
+  $(".roundtext").hide();
+  $(".player1heavy").hide();
+  $(".player2heavy").hide();
+  $(".player3heavy").hide();
+  $(".player4heavy").hide();
+  $("#player" + $($(".players")[0]).attr("id") + "health").remove();
+  $($(".players")[0]).css({left: "480px", top: "175px"});
+}
 
 
 function currentTurn() {
@@ -171,7 +192,6 @@ function player4vsplayer3heavy() {
   });
   $(".player4heavy").css("-webkit-transform", "rotate(0deg)");
 }
-
 
 
 

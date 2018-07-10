@@ -247,6 +247,15 @@ audio {
   width: 150px;
 }
 
+.mainreturn {
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  height: 40px;
+  width: 150px;
+  display: none;
+}
+
 .howtoplaylogo {
   position: absolute;
   top: 100px;
@@ -261,4 +270,22 @@ audio {
   left: 875px;
   height: 400px;
   width: 400px;
+}
+
+.winnername {
+  position: absolute;
+  top: 150px;
+  left: 485px;
+  height: 150px;
+  width: 450px;
+  display: none;
+}
+
+.winnerlogo {
+  position: absolute;
+  top: 450px;
+  left: 485px;
+  height: 150px;
+  width: 450px;
+  display: none;
 }
