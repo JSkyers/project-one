@@ -25,7 +25,7 @@ progress {
   background: red;
 }
 
-.backgroundresize {
+.backgroundResize {
   width: 1290px;
   height: 590px;
   position: relative;
@@ -139,28 +139,28 @@ body {
   z-index: 1;
 }
 
-.characterturntext {
+.characterturnText {
   top: 315px;
   left: 650px;
   height: 30px;
   width: 100px;
 }
 
-.phasetext {
+.phaseText {
   top: 350px;
   left: 600px;
   height: 30px;
   width: 200px;
 }
 
-.roundtext {
+.roundText {
   top: 500px;
   left: 635px;
   height: 30px;
   width: 100px;
 }
 
-.currentroundtext {
+.currentRoundText {
   top: 500px;
   left: 735px;
   height: 30px;
@@ -256,7 +256,7 @@ audio {
   display: none;
 }
 
-.howtoplaylogo {
+.howToPlayLogo {
   position: absolute;
   top: 100px;
   left: 625px;
@@ -299,7 +299,7 @@ audio {
   cursor: pointer;
 }
 
-.firstlinei {
+.firstLineI {
   position: absolute;
   top: 200px;
   left: 500px;
@@ -307,7 +307,7 @@ audio {
   width: 450px;
 }
 
-.secondlinei {
+.secondLineI {
   position: absolute;
   top: 220px;
   left: 440px;
@@ -315,7 +315,7 @@ audio {
   width: 600px;
 }
 
-.thirdlinei {
+.thirdLineI {
   position: absolute;
   top: 240px;
   left: 490px;
@@ -323,7 +323,7 @@ audio {
   width: 475px;
 }
 
-.fourthlinei {
+.fourthLineI {
   position: absolute;
   top: 260px;
   left: 520px;
@@ -331,25 +331,25 @@ audio {
   width: 400px;
 }
 
-.player1img {
+.player1Image {
   position: absolute;
   top: 300px;
   left: 0px;
 }
 
-.player2img {
+.player2Image {
   position: absolute;
   top: 290px;
   left: 300px;
 }
 
-.player3img {
+.player3Image {
   position: absolute;
   top: 290px;
   left: 600px;
 }
 
-.player4img {
+.player4Image {
   position: absolute;
   top: 290px;
   left: 900px;
@@ -387,7 +387,7 @@ audio {
   width: 100px;
 }
 
-.player1arrow {
+.player1Arrow {
   position: absolute;
   top: 390px;
   left: 260px;
@@ -396,7 +396,7 @@ audio {
   transform: rotate(90deg);
 }
 
-.player2arrow {
+.player2Arrow {
   position: absolute;
   top: 390px;
   left: 550px;
@@ -405,7 +405,7 @@ audio {
   transform: rotate(90deg);
 }
 
-.player3arrow {
+.player3Arrow {
   position: absolute;
   top: 390px;
   left: 890px;
@@ -414,7 +414,7 @@ audio {
   transform: rotate(90deg);
 }
 
-.player4arrow {
+.player4Arrow {
   position: absolute;
   top: 390px;
   left: 1170px;

@@ -1,35 +1,34 @@
 $(function() {
 
 
-var currentround = 1;
-var playersalive = 4;
+var currentRound = 1;
+var playersAlive = 4;
 var heavyProjectileAudio = new Audio('audio/projectile-light.wav');
 var winnerAudio = new Audio('audio/winner.wav');
-var playersturns = [1,2,3,4];
-var playerturn = 0;
+var playersTurns = [1,2,3,4];
+var playerTurn = 0;
 var attacksToRun =[];
 
 
 
 $(".players").click(function () {
-        if($(this).attr("id") != playersturns[playerturn]) {
+        if($(this).attr("id") != playersTurns[playerTurn]) {
           targetSelect(this);
-          if ($("#player"+$(this).attr("id")+"health")[0].value == 0) {
-              playerDeath(this);
-          }
-          if (playerturn >= playersturns.length - 1) {
+          if (playerTurn >= playersTurns.length - 1) {
               changeTurnOrRound();
           } else {
-            playerturn += 1;
+            playerTurn += 1;
           }
         }
         currentTurn();
-        currentRound();
+        currentround();
     });
 
+
+
 function changeTurnOrRound() {
-    playerturn = 0;
-    currentround += 1;
+    playerTurn = 0;
+    currentRound += 1;
 }
 
 function executeAttacks() {
@@ -41,8 +40,11 @@ function executeAttacks() {
 
 function targetSelect(target) {
   parseInt($("#player1health").attr("value"))
-  attacksToRun.push("player" + playersturns[playerturn] + "vsplayer" + $(target).attr("id") + "heavy");
-  if (attacksToRun.length == playersturns.length) {
+  if (parseInt($("#player"+$(this).attr("id")+"health").attr("value") <= 0)) {
+      playerDeath(this);
+  }
+  attacksToRun.push("player" + playersTurns[playerTurn] + "vsplayer" + $(target).attr("id") + "heavy");
+  if (attacksToRun.length == playersTurns.length) {
     executeAttacks();
   }
 }
@@ -52,14 +54,15 @@ function playerDeath(player) {
   $(player).fadeOut();
   $(player).remove();
   $("#player"+$(player).attr("id")+"health")[0].remove();
-  for (var i = 0; i < playersturns.length; i++) {
-    if (playersturns[i] != $(player).attr("id")) {
-      newOrder.push(playersturns[i]);
+  for (var i = 0; i < playersTurns.length; i++) {
+    if (playersTurns[i] != $(player).attr("id")) {
+      newOrder.push(playersTurns[i]);
     }
   }
-  playersturns = newOrder;
-  playersalive -= 1;
-  if (playersalive == 1) {
+  playersTurns = newOrder;
+  playersAlive -= 1;
+  console.log(playersAlive);
+  if (playersAlive == 1) {
       winnerOfGame();
   }
 }
@@ -72,10 +75,10 @@ function winnerOfGame() {
   $(".winnername").fadeIn();
   $(".winnerlogo").fadeIn();
   $(".mainreturn").show();
-  $(".characterturntext").hide();
-  $(".currentroundtext").hide();
-  $(".phasetext").hide();
-  $(".roundtext").hide();
+  $(".characterturnText").hide();
+  $(".currentRoundText").hide();
+  $(".phaseText").hide();
+  $(".roundText").hide();
   $(".player1heavy").hide();
   $(".player2heavy").hide();
   $(".player3heavy").hide();
@@ -86,11 +89,11 @@ function winnerOfGame() {
 
 
 function currentTurn() {
-  $(".characterturntext").attr("src","images/player-"+playersturns[playerturn]+"-logo.png");
+  $(".characterturnText").attr("src","images/player-"+playersTurns[playerTurn]+"-logo.png");
 }
 
-function currentRound() {
-  $(".currentroundtext").attr("src","images/round-"+(currentround)+".png");
+function currentround() {
+  $(".currentRoundText").attr("src","images/round-"+(currentRound)+".png");
 }
 
 
