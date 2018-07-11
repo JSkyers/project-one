@@ -10,13 +10,9 @@ var playerTurn = 0;
 var attacksToRun =[];
 
 
-
 $(".players").click(function () {
         if($(this).attr("id") != playersTurns[playerTurn]) {
           targetSelect(this);
-          if (parseInt($("#player"+$(this).attr("id")+"health").attr("value") <= 0)) {
-              playerDeath(this);
-          }
           if (playerTurn >= playersTurns.length - 1) {
               changeTurnOrRound();
           } else {
@@ -27,7 +23,11 @@ $(".players").click(function () {
         currentround();
     });
 
-
+function checkDeath(target) {
+  if ($("#player"+target+"health")[0].value <= 0) {
+      playerDeath($($("#"+target)[0]));
+  }
+}
 
 function changeTurnOrRound() {
     playerTurn = 0;
@@ -42,7 +42,7 @@ function executeAttacks() {
 }
 
 function targetSelect(target) {
-  parseInt($("#player1health").attr("value"))
+  parseInt($("#player"+$(target).attr("id")+"health").attr("value"))
   attacksToRun.push("player" + playersTurns[playerTurn] + "vsplayer" + $(target).attr("id") + "heavy");
   if (attacksToRun.length == playersTurns.length) {
     executeAttacks();
@@ -51,11 +51,11 @@ function targetSelect(target) {
 
 function playerDeath(player) {
   var newOrder = [];
-  $(player).fadeOut();
-  $(player).remove();
-  $("#player"+$(player).attr("id")+"health")[0].remove();
+  player.fadeOut();
+  player.remove();
+  $("#player"+player.attr("id")+"health")[0].remove();
   for (var i = 0; i < playersTurns.length; i++) {
-    if (playersTurns[i] != $(player).attr("id")) {
+    if (playersTurns[i] != player.attr("id")) {
       newOrder.push(playersTurns[i]);
     }
   }
@@ -106,6 +106,7 @@ function player1vsplayer2heavy() {
   });
   $(".player1heavy").css("-webkit-transform", "rotate(359deg)");
   $("#player2health")[0].value -= 20;
+  checkDeath("2");
 }
 
 function player1vsplayer3heavy() {
@@ -118,6 +119,7 @@ function player1vsplayer3heavy() {
   });
   $(".player1heavy").css("-webkit-transform", "rotate(90deg)");
   $("#player3health")[0].value -= 20;
+  checkDeath("3");
 }
 
 function player1vsplayer4heavy() {
@@ -130,6 +132,7 @@ function player1vsplayer4heavy() {
   });
   $(".player1heavy").css("-webkit-transform", "rotate(30deg)");
   $("#player4health")[0].value -= 20;
+  checkDeath("4");
 }
 
 function player2vsplayer1heavy() {
@@ -142,6 +145,7 @@ function player2vsplayer1heavy() {
   });
   $(".player2heavy").css("-webkit-transform", "rotate(359deg)");
   $("#player1health")[0].value -= 20;
+  checkDeath("1");
 }
 
 function player2vsplayer3heavy() {
@@ -154,6 +158,7 @@ function player2vsplayer3heavy() {
   });
   $(".player2heavy").css("-webkit-transform", "rotate(330deg)");
   $("#player3health")[0].value -= 20;
+  checkDeath("3");
 }
 
 function player2vsplayer4heavy() {
@@ -166,6 +171,7 @@ function player2vsplayer4heavy() {
   });
   $(".player2heavy").css("-webkit-transform", "rotate(270deg)");
   $("#player4health")[0].value -= 20;
+  checkDeath("4");
 }
 
 function player3vsplayer1heavy() {
@@ -178,6 +184,7 @@ function player3vsplayer1heavy() {
   });
   $(".player3heavy").css("-webkit-transform", "rotate(270deg)");
   $("#player1health")[0].value -= 20;
+  checkDeath("1");
 }
 
 function player3vsplayer2heavy() {
@@ -190,6 +197,7 @@ function player3vsplayer2heavy() {
   });
   $(".player3heavy").css("-webkit-transform", "rotate(330deg)");
   $("#player2health")[0].value -= 20;
+  checkDeath("2");
 }
 
 function player3vsplayer4heavy() {
@@ -202,6 +210,7 @@ function player3vsplayer4heavy() {
   });
   $(".player3heavy").css("-webkit-transform", "rotate(5deg)");
   $("#player4health")[0].value -= 20;
+  checkDeath("4");
 }
 
 function player4vsplayer1heavy() {
@@ -214,6 +223,7 @@ function player4vsplayer1heavy() {
   });
   $(".player4heavy").css("-webkit-transform", "rotate(20deg)");
   $("#player1health")[0].value -= 20;
+  checkDeath("1");
 }
 
 function player4vsplayer2heavy() {
@@ -226,6 +236,7 @@ function player4vsplayer2heavy() {
   });
   $(".player4heavy").css("-webkit-transform", "rotate(90deg)");
   $("#player2health")[0].value -= 20;
+  checkDeath("2");
 }
 
 function player4vsplayer3heavy() {
@@ -238,6 +249,7 @@ function player4vsplayer3heavy() {
   });
   $(".player4heavy").css("-webkit-transform", "rotate(0deg)");
   $("#player3health")[0].value -= 20;
+  checkDeath("3");
 }
 
 
