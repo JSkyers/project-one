@@ -332,58 +332,58 @@ audio {
 
 .firstLineI {
   position: absolute;
-  top: 200px;
-  left: 500px;
-  height: 20px;
-  width: 450px;
+  top: 180px;
+  left: 390px;
+  height: 40px;
+  width: 750px;
 }
 
 .secondLineI {
   position: absolute;
   top: 220px;
-  left: 440px;
-  height: 20px;
-  width: 600px;
+  left: 290px;
+  height: 40px;
+  width: 1000px;
 }
 
 .thirdLineI {
   position: absolute;
-  top: 240px;
-  left: 490px;
-  height: 20px;
-  width: 475px;
+  top: 260px;
+  left: 380px;
+  height: 40px;
+  width: 775px;
 }
 
 .fourthLineI {
   position: absolute;
-  top: 260px;
-  left: 520px;
-  height: 20px;
-  width: 400px;
+  top: 300px;
+  left: 420px;
+  height: 40px;
+  width: 700px;
 }
 
 .player1Image {
   position: absolute;
-  top: 300px;
-  left: 0px;
+  top: 450px;
+  left: 225px;
 }
 
 .player2Image {
   position: absolute;
-  top: 290px;
-  left: 300px;
+  top: 450px;
+  left: 505px;
 }
 
 .player3Image {
   position: absolute;
-  top: 290px;
-  left: 600px;
+  top: 430px;
+  left: 770px;
 }
 
 .player4Image {
   position: absolute;
-  top: 290px;
-  left: 900px;
+  top: 435px;
+  left: 1120px;
 }
 
 .player1Title {
