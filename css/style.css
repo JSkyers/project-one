@@ -40,26 +40,16 @@ body {
 .players {
   position: absolute;
   z-index: 1;
-  height: 400px;
+}
+
+.playersAttack {
+  position: absolute;
+  z-index: 1;
 }
 
 .projectiles {
   position: absolute;
   z-index: 1;
-}
-
-.blackhole {
-  position: absolute;
-  z-index: 1;
-  position: absolute;
-  top: 280px;
-  left:575px;
-  width: 240px;
-  height: 240px;
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-  animation:spin 4s linear infinite;
-  display: none;
 }
 
 .player1light {
@@ -140,76 +130,116 @@ body {
 }
 
 .characterturnText {
-  top: 315px;
-  left: 650px;
-  height: 30px;
-  width: 100px;
-}
-
-.phaseText {
-  top: 350px;
-  left: 600px;
-  height: 30px;
+  top: 235px;
+  left: 620px;
+  height: 60px;
   width: 200px;
 }
 
+.phaseText {
+  top: 310px;
+  left: 525px;
+  height: 60px;
+  width: 400px;
+}
+
 .roundText {
-  top: 500px;
-  left: 635px;
-  height: 30px;
-  width: 100px;
+  top: 460px;
+  left: 595px;
+  height: 60px;
+  width: 200px;
 }
 
 .currentRoundText {
-  top: 500px;
-  left: 735px;
-  height: 30px;
-  width: 25px;
+  top: 460px;
+  left: 795px;
+  height: 60px;
+  width: 50px;
 }
 
 .player1 {
-  top: 0px;
-  left: 0px;
+  top: 150px;
+  left: 175px;
+	height: 175px;
+	width:100px;
 }
 
 .player2 {
-  top: 0px;
-  right: 30px;
+  top: 150px;
+  right: 230px;
+	height: 175px;
+	width:100px;
 }
 
 .player3 {
-  bottom: 0px;
-  left: 0px;
+  bottom: 140px;
+  left: 100px;
+	height: 175px;
+	width:175px;
 
 }
 
 .player4 {
-  bottom: 0px;
-  right: 40px;
+  bottom: 140px;
+  right: 230px;
+	height:175px;
+	width:100px;
 }
 
+.playerAttack1 {
+  top: 150px;
+  left: 150px;
+	height: 175px;
+	width:125px;
+	display: none;
+}
+
+.playerAttack2 {
+  top: 115px;
+  right: 160px;
+	height: 225px;
+	width:225px;
+	display: none;
+}
+
+.playerAttack3 {
+  bottom: 130px;
+  left: 100px;
+	height: 195px;
+	width:200px;
+	display: none;
+
+}
+
+.playerAttack4 {
+  bottom: 140px;
+  right: 225px;
+	height:195px;
+	width:140px;
+	display: none;
+}
 audio {
   display: none;
 }
 
 #player1health {
-  top: 100px;
-  left: 140px;
+  top: 120px;
+  left: 170px;
 }
 
 #player2health {
-  top: 100px;
-  right: 160px;
+  top: 120px;
+  right: 220px;
 }
 
 #player3health {
-  bottom: 300px;
-  left: 160px;
+  bottom: 330px;
+  left: 170px;
 }
 
 #player4health {
-  bottom: 300px;
-  right: 160px;
+  bottom: 330px;
+  right: 220px;
 }
 
 .healthbars {
@@ -296,8 +326,9 @@ audio {
 }
 
 .players:hover {
-  cursor: pointer;
+	cursor: url('../images/attack-cursor.png'), auto;
 }
+
 
 .firstLineI {
   position: absolute;
