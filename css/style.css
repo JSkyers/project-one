@@ -1,0 +1,424 @@
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+progress::-webkit-progress-bar { background: red; }
+progress::-webkit-progress-value { background: green; }
+
+#container {
+	width: 1300px;
+	height: 600px;
+  margin-top: 80px;
+  margin-left: 100px;
+	border-radius: 10px;
+	border: 5px solid black;
+}
+
+progress {
+  color: green;
+  font-size: .6em;
+  line-height: 1.5em;
+  text-indent: .5em;
+  width: 15em;
+  height: 1.8em;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: red;
+}
+
+.backgroundResize {
+  width: 1290px;
+  height: 590px;
+  position: relative;
+}
+
+body {
+  background-image: url("../images/home-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.players {
+  position: absolute;
+  z-index: 1;
+  height: 400px;
+}
+
+.projectiles {
+  position: absolute;
+  z-index: 1;
+}
+
+.blackhole {
+  position: absolute;
+  z-index: 1;
+  position: absolute;
+  top: 280px;
+  left:575px;
+  width: 240px;
+  height: 240px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+  display: none;
+}
+
+.player1light {
+  top: 175px;
+  left:200px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(20deg);
+  display: none;
+}
+
+.player1heavy {
+  top: 175px;
+  left:200px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(20deg);
+  display: none;
+}
+
+.player2light {
+  top: 195px;
+  right:220px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(340deg);
+  display: none;
+}
+
+.player2heavy {
+  top: 175px;
+  right:200px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(340deg);
+  display: none;
+}
+
+.player3light {
+  bottom: 185px;
+  left:220px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(350deg);
+  display: none;
+}
+
+.player3heavy {
+  bottom: 185px;
+  left:220px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(350deg);
+  display: none;
+}
+
+.player4light {
+  bottom: 165px;
+  right:220px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(10deg);
+  display: none;
+}
+
+.player4heavy {
+  bottom: 165px;
+  right:225px;
+  height: 100px;
+  width: 150px;
+  transform: rotate(10deg);
+  display: none;
+}
+
+.interface {
+  position: absolute;
+  z-index: 1;
+}
+
+.characterturnText {
+  top: 315px;
+  left: 650px;
+  height: 30px;
+  width: 100px;
+}
+
+.phaseText {
+  top: 350px;
+  left: 600px;
+  height: 30px;
+  width: 200px;
+}
+
+.roundText {
+  top: 500px;
+  left: 635px;
+  height: 30px;
+  width: 100px;
+}
+
+.currentRoundText {
+  top: 500px;
+  left: 735px;
+  height: 30px;
+  width: 25px;
+}
+
+.player1 {
+  top: 0px;
+  left: 0px;
+}
+
+.player2 {
+  top: 0px;
+  right: 30px;
+}
+
+.player3 {
+  bottom: 0px;
+  left: 0px;
+
+}
+
+.player4 {
+  bottom: 0px;
+  right: 40px;
+}
+
+audio {
+  display: none;
+}
+
+#player1health {
+  top: 100px;
+  left: 140px;
+}
+
+#player2health {
+  top: 100px;
+  right: 160px;
+}
+
+#player3health {
+  bottom: 300px;
+  left: 160px;
+}
+
+#player4health {
+  bottom: 300px;
+  right: 160px;
+}
+
+.healthbars {
+  position: absolute;
+  color: red;
+}
+
+.title {
+  position: absolute;
+  top: 150px;
+  left: 525px;
+}
+
+.start {
+  position: absolute;
+  top: 400px;
+  left: 675px;
+  height: 40px;
+  width: 150px;
+}
+
+.instructions {
+  position: absolute;
+  top: 475px;
+  left: 675px;
+  height: 40px;
+  width: 150px;
+}
+
+.return {
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  height: 40px;
+  width: 150px;
+}
+
+.mainreturn {
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  height: 40px;
+  width: 150px;
+  display: none;
+}
+
+.howToPlayLogo {
+  position: absolute;
+  top: 100px;
+  left: 625px;
+  height: 70px;
+  width: 250px;
+}
+
+.victorylogo {
+  position: absolute;
+  top: 175px;
+  left: 875px;
+  height: 400px;
+  width: 400px;
+}
+
+.winnername {
+  position: absolute;
+  top: 150px;
+  left: 485px;
+  height: 150px;
+  width: 450px;
+  display: none;
+}
+
+.winnerlogo {
+  position: absolute;
+  top: 450px;
+  left: 485px;
+  height: 150px;
+  width: 450px;
+  display: none;
+}
+
+  a:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.players:hover {
+  cursor: pointer;
+}
+
+.firstLineI {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  height: 20px;
+  width: 450px;
+}
+
+.secondLineI {
+  position: absolute;
+  top: 220px;
+  left: 440px;
+  height: 20px;
+  width: 600px;
+}
+
+.thirdLineI {
+  position: absolute;
+  top: 240px;
+  left: 490px;
+  height: 20px;
+  width: 475px;
+}
+
+.fourthLineI {
+  position: absolute;
+  top: 260px;
+  left: 520px;
+  height: 20px;
+  width: 400px;
+}
+
+.player1Image {
+  position: absolute;
+  top: 300px;
+  left: 0px;
+}
+
+.player2Image {
+  position: absolute;
+  top: 290px;
+  left: 300px;
+}
+
+.player3Image {
+  position: absolute;
+  top: 290px;
+  left: 600px;
+}
+
+.player4Image {
+  position: absolute;
+  top: 290px;
+  left: 900px;
+}
+
+.player1Title {
+  position: absolute;
+  top: 360px;
+  left: 220px;
+  height: 20px;
+  width: 100px;
+}
+
+.player2Title {
+  position: absolute;
+  top: 360px;
+  left: 510px;
+  height: 20px;
+  width: 100px;
+}
+
+.player3Title {
+  position: absolute;
+  top: 360px;
+  left: 850px;
+  height: 20px;
+  width: 100px;
+}
+
+.player4Title {
+  position: absolute;
+  top: 360px;
+  left: 1130px;
+  height: 20px;
+  width: 100px;
+}
+
+.player1Arrow {
+  position: absolute;
+  top: 390px;
+  left: 260px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.player2Arrow {
+  position: absolute;
+  top: 390px;
+  left: 550px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.player3Arrow {
+  position: absolute;
+  top: 390px;
+  left: 890px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.player4Arrow {
+  position: absolute;
+  top: 390px;
+  left: 1170px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(90deg);
+}

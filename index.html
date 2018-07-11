@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Magic Royale</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+    <audio autoplay loop preload="auto">
+      <source src="audio/main-game-background-music.mp3" type="audio/mpeg;">
+    </audio>
+		<div id="container">
+      <img class = "backgroundResize" src="images/main-background.png">
+      <img id="1" class = "players player1" src="images/player-1-stand.gif">
+      <img id="2" class = "players player2" src="images/player-2-stand.gif">
+      <img id="3" class = "players player3" src="images/player-3-stand.gif">
+      <img id="4" class = "players player4" src="images/player-4-stand.gif">
+      <img class = "interface characterturnText " src="images/player-1-logo.png">
+      <img class = "interface phaseText " src="images/pick-your-target.png">
+      <img class = "interface roundText " src="images/round.png">
+      <img class = "interface currentRoundText " src="images/round-1.png">
+      <progress id="player1health" class="healthbars" value="100" max="100"></progress>
+      <progress id="player2health" class="healthbars" value="100" max="100"></progress>
+      <progress id="player3health" class="healthbars" value="100" max="100"></progress>
+      <progress id="player4health" class="healthbars" value="100" max="100"></progress>
+      <img class = "projectiles player1light" src="images/player-1-projectile-light.gif">
+      <img class = "projectiles player1heavy" src="images/player-1-projectile-heavy.gif">
+      <img class = "projectiles player2light" src="images/player-2-projectile-light.gif">
+      <img class = "projectiles player2heavy" src="images/player-2-projectile-heavy.gif">
+      <img class = "projectiles player3light" src="images/player-3-projectile-light.gif">
+      <img class = "projectiles player3heavy" src="images/player-3-projectile-heavy.gif">
+      <img class = "projectiles player4light" src="images/player-4-projectile-light.gif">
+      <img class = "projectiles player4heavy" src="images/player-4-projectile-heavy.gif">
+      <img class = "blackhole" src="images/black-hole.png">
+      <img id="winner" class = "winnername" src="images/player-1-victory.png">
+      <img class = "winnerlogo" src="images/victory.png">
+      <a href="start.html">
+        <img class = "mainreturn option" src="images/return.png" alt="back">
+      </a>
+		</div>
+		<script src="js/main.js"></script>
+	</body>
+</html>
