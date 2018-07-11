@@ -48,6 +48,7 @@ function checkDeath(target) {
       eval("player"+target+"AudioDeath.play()");
   } else {
     eval("player"+target+"AudioDamage.play()");
+    hitAudio.play();
   }
 }
 
@@ -143,6 +144,7 @@ function player1vsplayer2heavy() {
   $(".player1").hide();
   $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
+  fireAudio.play();
   $(".player1heavy").animate({left: '+=970'}, 800, function() {
     $(".player1heavy").hide();
     $(".playerAttack1").hide();
@@ -160,6 +162,7 @@ function player1vsplayer3heavy() {
   $(".player1").hide();
   $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
+  fireAudio.play();
   $(".player1heavy").animate({top: '+=300'}, 800, function() {
     $(".player1heavy").hide();
     $(".playerAttack1").hide();
@@ -176,6 +179,7 @@ function player1vsplayer4heavy() {
   $(".player1").hide();
   $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
+  fireAudio.play();
   $(".player1heavy").animate({left: '+=970', top: '+=300'}, 800, function() {
     $(".player1heavy").hide();
     $(".playerAttack1").hide();
@@ -192,6 +196,7 @@ function player2vsplayer1heavy() {
   $(".player2").hide();
   $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
+  fireAudio.play();
   $(".player2heavy").animate({left: '-=970'}, 800, function() {
     $(".player2heavy").hide();
     $(".playerAttack2").hide();
@@ -208,6 +213,7 @@ function player2vsplayer3heavy() {
   $(".player2").hide();
   $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
+  fireAudio.play();
   $(".player2heavy").animate({left: '-=970', top: '+=300'}, 800, function() {
     $(".player2heavy").hide();
     $(".playerAttack2").hide();
@@ -224,6 +230,7 @@ function player2vsplayer4heavy() {
   $(".player2").hide();
   $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
+  fireAudio.play();
   $(".player2heavy").animate({top: '+=300'}, 800, function() {
     $(".player2heavy").hide();
     $(".playerAttack2").hide();
@@ -240,6 +247,7 @@ function player3vsplayer1heavy() {
   $(".player3").hide();
   $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
+  fireAudio.play();
   $(".player3heavy").animate({top: '-=300'}, 800, function() {
     $(".player3heavy").hide();
     $(".playerAttack3").hide();
@@ -256,6 +264,7 @@ function player3vsplayer2heavy() {
   $(".player3").hide();
   $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
+  fireAudio.play();
   $(".player3heavy").animate({top: '-=300', left: '+=970'}, 800, function() {
     $(".player3heavy").hide();
     $(".playerAttack3").hide();
@@ -272,6 +281,7 @@ function player3vsplayer4heavy() {
   $(".player3").hide();
   $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
+  fireAudio.play();
   $(".player3heavy").animate({left: '+=970'}, 800, function() {
     $(".player3heavy").hide();
     $(".playerAttack3").hide();
@@ -288,6 +298,7 @@ function player4vsplayer1heavy() {
   $(".player4").hide();
   $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
+  fireAudio.play();
   $(".player4heavy").animate({left: '-=970', top: '-=300'}, 800, function() {
     $(".player4heavy").hide();
     $(".playerAttack4").hide();
@@ -304,6 +315,7 @@ function player4vsplayer2heavy() {
   $(".player4").hide();
   $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
+  fireAudio.play();
   $(".player4heavy").animate({top: '-=300'}, 800, function() {
     $(".player4heavy").hide();
     $(".playerAttack4").hide();
@@ -320,6 +332,7 @@ function player4vsplayer3heavy() {
   $(".player4").hide();
   $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
+  fireAudio.play();
   $(".player4heavy").animate({left: '-=970'}, 800, function() {
     $(".player4heavy").hide();
     $(".playerAttack4").hide();
