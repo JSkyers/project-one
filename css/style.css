@@ -52,30 +52,12 @@ body {
   z-index: 1;
 }
 
-.player1light {
-  top: 175px;
-  left:200px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(20deg);
-  display: none;
-}
-
 .player1heavy {
   top: 175px;
   left:200px;
   height: 100px;
   width: 150px;
   transform: rotate(20deg);
-  display: none;
-}
-
-.player2light {
-  top: 195px;
-  right:220px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(340deg);
   display: none;
 }
 
@@ -88,30 +70,12 @@ body {
   display: none;
 }
 
-.player3light {
-  bottom: 185px;
-  left:220px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(350deg);
-  display: none;
-}
-
 .player3heavy {
   bottom: 185px;
   left:220px;
   height: 100px;
   width: 150px;
   transform: rotate(350deg);
-  display: none;
-}
-
-.player4light {
-  bottom: 165px;
-  right:220px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(10deg);
   display: none;
 }
 
@@ -247,10 +211,46 @@ audio {
   color: red;
 }
 
-.title {
+.titleM {
   position: absolute;
   top: 150px;
+  left: 545px;
+	display: none;
+}
+
+.titleA {
+  position: absolute;
+  top: 150px;
+  left: 655px;
+	display: none;
+}
+
+.titleG {
+  position: absolute;
+  top: 150px;
+  left: 730px;
+	display: none;
+}
+
+.titleI {
+  position: absolute;
+  top: 150px;
+  left: 805px;
+	display: none;
+}
+
+.titleC {
+  position: absolute;
+  top: 150px;
+  left: 845px;
+	display: none;
+}
+
+.titleRoyale {
+  position: absolute;
+  top: 250px;
   left: 525px;
+	display: none;
 }
 
 .start {
@@ -259,6 +259,7 @@ audio {
   left: 675px;
   height: 40px;
   width: 150px;
+	display: none;
 }
 
 .instructions {
@@ -267,6 +268,7 @@ audio {
   left: 675px;
   height: 40px;
   width: 150px;
+	display: none;
 }
 
 .return {
@@ -280,10 +282,9 @@ audio {
 .mainreturn {
   position: absolute;
   top: 100px;
-  left: 120px;
-  height: 40px;
-  width: 150px;
-  display: none;
+  left: 650px;
+  height: 35px;
+  width: 120px;
 }
 
 .howToPlayLogo {
@@ -320,14 +321,15 @@ audio {
   display: none;
 }
 
-  a:hover {
+.menuOption:hover {
   opacity: 0.6;
-  cursor: pointer;
+  cursor: url('../images/pointer.png'), auto;
 }
 
 .players:hover {
-	cursor: url('../images/attack-cursor.png'), auto;
+	cursor: url('../images/pointer.png'), auto;
 }
+
 
 
 .firstLineI {
