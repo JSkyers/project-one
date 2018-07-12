@@ -135,6 +135,10 @@ function currentround() {
     $(".currentRoundText").fadeIn();
     $(".phaseText").fadeIn();
     $(".roundText").fadeIn();
+    $(".player4heavy").css({"top": "485px", "left": "1145px"});
+    $(".player1heavy").css({"left": "175px", "top": "175px"});
+    $(".player2heavy").css({"left": "1145px", "top": "175px"});
+    $(".player3heavy").css({"top": "485px", "left": "220px"});
   }
 }
 
@@ -142,7 +146,6 @@ function currentround() {
 function player1vsplayer2heavy() {
   $(".playerAttack1").show();
   $(".player1").hide();
-  $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
   fireAudio.play();
   $(".player1heavy").animate({left: '+=970'}, 800, function() {
@@ -160,7 +163,6 @@ function player1vsplayer2heavy() {
 function player1vsplayer3heavy() {
   $(".playerAttack1").show();
   $(".player1").hide();
-  $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
   fireAudio.play();
   $(".player1heavy").animate({top: '+=300'}, 800, function() {
@@ -177,7 +179,6 @@ function player1vsplayer3heavy() {
 function player1vsplayer4heavy() {
   $(".playerAttack1").show();
   $(".player1").hide();
-  $(".player1heavy").css({left: "175px", top: "200px"});
   $(".player1heavy").show();
   fireAudio.play();
   $(".player1heavy").animate({left: '+=970', top: '+=300'}, 800, function() {
@@ -194,7 +195,6 @@ function player1vsplayer4heavy() {
 function player2vsplayer1heavy() {
   $(".playerAttack2").show();
   $(".player2").hide();
-  $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
   fireAudio.play();
   $(".player2heavy").animate({left: '-=970'}, 800, function() {
@@ -211,7 +211,6 @@ function player2vsplayer1heavy() {
 function player2vsplayer3heavy() {
   $(".playerAttack2").show();
   $(".player2").hide();
-  $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
   fireAudio.play();
   $(".player2heavy").animate({left: '-=970', top: '+=300'}, 800, function() {
@@ -228,7 +227,6 @@ function player2vsplayer3heavy() {
 function player2vsplayer4heavy() {
   $(".playerAttack2").show();
   $(".player2").hide();
-  $(".player2heavy").css({right: "200px", top: "175px"});
   $(".player2heavy").show();
   fireAudio.play();
   $(".player2heavy").animate({top: '+=300'}, 800, function() {
@@ -245,7 +243,6 @@ function player2vsplayer4heavy() {
 function player3vsplayer1heavy() {
   $(".playerAttack3").show();
   $(".player3").hide();
-  $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
   fireAudio.play();
   $(".player3heavy").animate({top: '-=300'}, 800, function() {
@@ -262,7 +259,6 @@ function player3vsplayer1heavy() {
 function player3vsplayer2heavy() {
   $(".playerAttack3").show();
   $(".player3").hide();
-  $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
   fireAudio.play();
   $(".player3heavy").animate({top: '-=300', left: '+=970'}, 800, function() {
@@ -279,7 +275,6 @@ function player3vsplayer2heavy() {
 function player3vsplayer4heavy() {
   $(".playerAttack3").show();
   $(".player3").hide();
-  $(".player3heavy").css({bottom: "185px", left: "220px"});
   $(".player3heavy").show();
   fireAudio.play();
   $(".player3heavy").animate({left: '+=970'}, 800, function() {
@@ -296,7 +291,6 @@ function player3vsplayer4heavy() {
 function player4vsplayer1heavy() {
   $(".playerAttack4").show();
   $(".player4").hide();
-  $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
   fireAudio.play();
   $(".player4heavy").animate({left: '-=970', top: '-=300'}, 800, function() {
@@ -313,7 +307,6 @@ function player4vsplayer1heavy() {
 function player4vsplayer2heavy() {
   $(".playerAttack4").show();
   $(".player4").hide();
-  $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
   fireAudio.play();
   $(".player4heavy").animate({top: '-=300'}, 800, function() {
@@ -330,7 +323,6 @@ function player4vsplayer2heavy() {
 function player4vsplayer3heavy() {
   $(".playerAttack4").show();
   $(".player4").hide();
-  $(".player4heavy").css({bottom: "165px", right: "225px"});
   $(".player4heavy").show();
   fireAudio.play();
   $(".player4heavy").animate({left: '-=970'}, 800, function() {
