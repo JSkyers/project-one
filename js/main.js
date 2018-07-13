@@ -21,10 +21,6 @@ $(function() {
   var player2AudioWin = new Audio('audio/player-2-win.wav');
   var player3AudioWin = new Audio('audio/player-3-win.wav');
   var player4AudioWin = new Audio('audio/player-4-win.wav');
-  var player1AudioDeath = new Audio('audio/player-1-death.wav');
-  var player2AudioDeath = new Audio('audio/player-2-death.wav');
-  var player3AudioDeath = new Audio('audio/player-3-death.wav');
-  var player4AudioDeath = new Audio('audio/player-4-death.wav');
   var player1AudioHit = new Audio('audio/player-1-hit.wav');
   var player2AudioHit = new Audio('audio/player-2-hit.wav');
   var player3AudioHit = new Audio('audio/player-3-hit.wav');
@@ -58,6 +54,10 @@ $(function() {
       });
 
   function checkDeath(target) {
+    var player1AudioDeath = new Audio('audio/player-1-death.wav');
+    var player2AudioDeath = new Audio('audio/player-2-death.wav');
+    var player3AudioDeath = new Audio('audio/player-3-death.wav');
+    var player4AudioDeath = new Audio('audio/player-4-death.wav');
     if ($("#player"+target+"health")[0].value <= 0) {
         playerDeath($($("#"+target)[0]));
         eval("player"+target+"AudioDeath.play()");
