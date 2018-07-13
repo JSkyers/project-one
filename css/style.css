@@ -295,6 +295,43 @@ audio {
   width: 250px;
 }
 
+.highlight {
+	position: absolute;
+  z-index: 1;
+}
+
+.player1highlight {
+	top: 335px;
+	left: 170px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
+.player2highlight {
+	top: 335px;
+	left: 1200px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
+.player3highlight {
+	top: 635px;
+	left: 170px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
+.player4highlight {
+	top: 635px;
+	left: 1200px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
 .victorylogo {
   position: absolute;
   top: 175px;
