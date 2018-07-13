@@ -40,35 +40,16 @@ body {
 .players {
   position: absolute;
   z-index: 1;
-  height: 400px;
+}
+
+.playersAttack {
+  position: absolute;
+  z-index: 1;
 }
 
 .projectiles {
   position: absolute;
   z-index: 1;
-}
-
-.blackhole {
-  position: absolute;
-  z-index: 1;
-  position: absolute;
-  top: 280px;
-  left:575px;
-  width: 240px;
-  height: 240px;
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-  animation:spin 4s linear infinite;
-  display: none;
-}
-
-.player1light {
-  top: 175px;
-  left:200px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(20deg);
-  display: none;
 }
 
 .player1heavy {
@@ -77,15 +58,6 @@ body {
   height: 100px;
   width: 150px;
   transform: rotate(20deg);
-  display: none;
-}
-
-.player2light {
-  top: 195px;
-  right:220px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(340deg);
   display: none;
 }
 
@@ -98,30 +70,12 @@ body {
   display: none;
 }
 
-.player3light {
-  bottom: 185px;
-  left:220px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(350deg);
-  display: none;
-}
-
 .player3heavy {
   bottom: 185px;
   left:220px;
   height: 100px;
   width: 150px;
   transform: rotate(350deg);
-  display: none;
-}
-
-.player4light {
-  bottom: 165px;
-  right:220px;
-  height: 100px;
-  width: 100px;
-  transform: rotate(10deg);
   display: none;
 }
 
@@ -140,76 +94,116 @@ body {
 }
 
 .characterturnText {
-  top: 315px;
-  left: 650px;
-  height: 30px;
-  width: 100px;
-}
-
-.phaseText {
-  top: 350px;
-  left: 600px;
-  height: 30px;
+  top: 235px;
+  left: 620px;
+  height: 60px;
   width: 200px;
 }
 
+.phaseText {
+  top: 310px;
+  left: 525px;
+  height: 60px;
+  width: 400px;
+}
+
 .roundText {
-  top: 500px;
-  left: 635px;
-  height: 30px;
-  width: 100px;
+  top: 460px;
+  left: 595px;
+  height: 60px;
+  width: 200px;
 }
 
 .currentRoundText {
-  top: 500px;
-  left: 735px;
-  height: 30px;
-  width: 25px;
+  top: 460px;
+  left: 795px;
+  height: 60px;
+  width: 50px;
 }
 
 .player1 {
-  top: 0px;
-  left: 0px;
+  top: 150px;
+  left: 175px;
+	height: 175px;
+	width:100px;
 }
 
 .player2 {
-  top: 0px;
-  right: 30px;
+  top: 150px;
+  right: 230px;
+	height: 175px;
+	width:100px;
 }
 
 .player3 {
-  bottom: 0px;
-  left: 0px;
+  bottom: 140px;
+  left: 100px;
+	height: 175px;
+	width:175px;
 
 }
 
 .player4 {
-  bottom: 0px;
-  right: 40px;
+  bottom: 140px;
+  right: 230px;
+	height:175px;
+	width:100px;
 }
 
+.playerAttack1 {
+  top: 150px;
+  left: 150px;
+	height: 175px;
+	width:125px;
+	display: none;
+}
+
+.playerAttack2 {
+  top: 115px;
+  right: 160px;
+	height: 225px;
+	width:225px;
+	display: none;
+}
+
+.playerAttack3 {
+  bottom: 130px;
+  left: 100px;
+	height: 195px;
+	width:200px;
+	display: none;
+
+}
+
+.playerAttack4 {
+  bottom: 140px;
+  right: 225px;
+	height:195px;
+	width:140px;
+	display: none;
+}
 audio {
   display: none;
 }
 
 #player1health {
-  top: 100px;
-  left: 140px;
+  top: 120px;
+  left: 170px;
 }
 
 #player2health {
-  top: 100px;
-  right: 160px;
+  top: 120px;
+  right: 220px;
 }
 
 #player3health {
-  bottom: 300px;
-  left: 160px;
+  bottom: 330px;
+  left: 170px;
 }
 
 #player4health {
-  bottom: 300px;
-  right: 160px;
+  bottom: 330px;
+  right: 220px;
 }
 
 .healthbars {
@@ -217,10 +211,46 @@ audio {
   color: red;
 }
 
-.title {
+.titleM {
   position: absolute;
   top: 150px;
+  left: 545px;
+	display: none;
+}
+
+.titleA {
+  position: absolute;
+  top: 150px;
+  left: 655px;
+	display: none;
+}
+
+.titleG {
+  position: absolute;
+  top: 150px;
+  left: 730px;
+	display: none;
+}
+
+.titleI {
+  position: absolute;
+  top: 150px;
+  left: 805px;
+	display: none;
+}
+
+.titleC {
+  position: absolute;
+  top: 150px;
+  left: 845px;
+	display: none;
+}
+
+.titleRoyale {
+  position: absolute;
+  top: 250px;
   left: 525px;
+	display: none;
 }
 
 .start {
@@ -229,14 +259,16 @@ audio {
   left: 675px;
   height: 40px;
   width: 150px;
+	display: none;
 }
 
 .instructions {
   position: absolute;
   top: 475px;
-  left: 675px;
+  left: 625px;
   height: 40px;
-  width: 150px;
+  width: 250px;
+	display: none;
 }
 
 .return {
@@ -250,18 +282,54 @@ audio {
 .mainreturn {
   position: absolute;
   top: 100px;
-  left: 120px;
-  height: 40px;
-  width: 150px;
-  display: none;
+  left: 650px;
+  height: 35px;
+  width: 120px;
 }
 
 .howToPlayLogo {
   position: absolute;
   top: 100px;
   left: 625px;
-  height: 70px;
+  height: 50px;
   width: 250px;
+}
+
+.highlight {
+	position: absolute;
+  z-index: 1;
+}
+
+.player1highlight {
+	top: 335px;
+	left: 170px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
+.player2highlight {
+	top: 335px;
+	left: 1200px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
+.player3highlight {
+	top: 635px;
+	left: 170px;
+	height:30px;
+	width: 120px;
+	display: none;
+}
+
+.player4highlight {
+	top: 635px;
+	left: 1200px;
+	height:30px;
+	width: 120px;
+	display: none;
 }
 
 .victorylogo {
@@ -290,69 +358,71 @@ audio {
   display: none;
 }
 
-  a:hover {
+.menuOption:hover {
   opacity: 0.6;
-  cursor: pointer;
+  cursor: url('../images/pointer.png'), auto;
 }
 
 .players:hover {
-  cursor: pointer;
+	cursor: url('../images/pointer.png'), auto;
 }
+
+
 
 .firstLineI {
   position: absolute;
-  top: 200px;
-  left: 500px;
-  height: 20px;
-  width: 450px;
+  top: 180px;
+  left: 390px;
+  height: 40px;
+  width: 750px;
 }
 
 .secondLineI {
   position: absolute;
   top: 220px;
-  left: 440px;
-  height: 20px;
-  width: 600px;
+  left: 290px;
+  height: 40px;
+  width: 1000px;
 }
 
 .thirdLineI {
   position: absolute;
-  top: 240px;
-  left: 490px;
-  height: 20px;
-  width: 475px;
+  top: 260px;
+  left: 380px;
+  height: 40px;
+  width: 775px;
 }
 
 .fourthLineI {
   position: absolute;
-  top: 260px;
-  left: 520px;
-  height: 20px;
-  width: 400px;
+  top: 300px;
+  left: 420px;
+  height: 40px;
+  width: 700px;
 }
 
 .player1Image {
   position: absolute;
-  top: 300px;
-  left: 0px;
+  top: 450px;
+  left: 225px;
 }
 
 .player2Image {
   position: absolute;
-  top: 290px;
-  left: 300px;
+  top: 450px;
+  left: 505px;
 }
 
 .player3Image {
   position: absolute;
-  top: 290px;
-  left: 600px;
+  top: 430px;
+  left: 770px;
 }
 
 .player4Image {
   position: absolute;
-  top: 290px;
-  left: 900px;
+  top: 435px;
+  left: 1120px;
 }
 
 .player1Title {
