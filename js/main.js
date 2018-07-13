@@ -43,6 +43,7 @@ $(function() {
   player2AudioHit.volume = 0.5;
   player3AudioHit.volume = 0.5;
   player4AudioHit.volume = 0.5;
+  // targetAudio.volume = 0.7;
 
   $(".players").click(function () {
           if($(this).attr("id") != playersTurns[playerTurn]) {
@@ -83,6 +84,7 @@ $(function() {
     parseInt($("#player"+$(target).attr("id")+"health").attr("value"))
     attacksToRun.push("player" + playersTurns[playerTurn] + "vsplayer" + $(target).attr("id") + "heavy");
     eval("player"+playersTurns[playerTurn]+"AudioAttack.play()");
+    targetAudio.play();
     if (attacksToRun.length == playersTurns.length) {
       setTimeout(executeAttacks, 750);
       setTimeout(currentround, 1950);
